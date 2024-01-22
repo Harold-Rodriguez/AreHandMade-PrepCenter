@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  .calculator-container {
+    border: 1px solid #000;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #e0e0e0;
+  }
+  input[type=number], select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+  #result-container {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="calculator-container">
+  <h1>Calculator</h1>
+
+  <!-- Preparation Section -->
+  <h2>Preparation</h2>
+  <table>
+    <tr>
+      <th>Preparation</th>
+      <th># Number</th>
+      <th>Cost</th>
+    </tr>
+    <tr>
+      <td>Number of Units</td>
+      <td><input type="number" id="numOfUnits" min="1"></td>
+      <td rowspan="3"></td>
+    </tr>
+    <tr>
+      <td>Number Packages</td>
+      <td><input type="number" id="numPackages" min="1"></td>
+    </tr>
+    <tr>
+      <td>Units Per Package</td>
+      <td><input type="number" id="unitsPerPackage" min="1"></td>
+    </tr>
+  </table>
+  
+  <!-- Packaging Section -->
+  <h2>Packaging</h2>
+  <table>
+    <tr>
+      <th>Material Type</th>
+      <th># Number</th>
+    </tr>
+    <tr>
+      <td>
+        <select id="materialType1">
+          <option value="0.75">Hoja de burbuja</option>
+          <option value="0.85">Sobre con burbuja</option>
+          <option value="1.00">Caja Small</option>
+          <option value="1.50">Caja Medium</option>
+          <option value="2.80">Caja Large</option>
+          <option value="3.55">Caja X-Large</option>
+        </select>
+      </td>
+      <td><input type="number" id="quantity1" min="0"></td>
+    </tr>
+    <tr>
+      <td>
+        <select id="materialType2">
+            <option value="0.75">Hoja de burbuja</option>
+            <option value="0.85">Sobre con burbuja</option>
+            <option value="1.00">Caja Small</option>
+            <option value="1.50">Caja Medium</option>
+            <option value="2.80">Caja Large</option>
+            <option value="3.55">Caja X-Large</option>
+        </select>
+      </td>
+      <td><input type="number" id="quantity2" min="0"></td>
+    </tr>
+    <tr>
+      <td>
+        <select id="materialType3">
+            <option value="0.75">Hoja de burbuja</option>
+            <option value="0.85">Sobre con burbuja</option>
+            <option value="1.00">Caja Small</option>
+            <option value="1.50">Caja Medium</option>
+            <option value="2.80">Caja Large</option>
+            <option value="3.55">Caja X-Large</option>
+        </select>
+      </td>
+      <td><input type="number" id="quantity3" min="0"></td>
+    </tr>
+  </table>
+
+  <div class="calculator-container">
+    <h2>Shipping</h2>
+    <table>
+      <tr>
+        <th>Shipping</th>
+        <th># Number</th>
+      </tr>
+      <tr>
+        <td>Number of Shipments</td>
+        <td><input type="number" id="numOfShipments" min="0"></td>
+      </tr>
+    </table>
+  </div>
+  
+  <button onclick="calculateTotal()">Calcul Total</button>
+  
+  <div id="result-container">
+    <!-- Total cost for Preparation and Packaging will be displayed here -->
+  </div>
+</div>
+
+<script src="calculate.js"></script>
+</body>
+</html>
